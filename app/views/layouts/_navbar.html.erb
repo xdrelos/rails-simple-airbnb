@@ -1,0 +1,28 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
+  <%= link_to 'Simple Airbnb', flats_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <% if request.path == flats_path || request.path == root_path %>
+        <form class="form-inline my-2 my-lg-0 mr-2">
+          <!-- <select id="city-input"  name="city-input" multiple="multiple">
+            <% @flats.each do |flat| %>
+              <option><%= flat.name %></option>
+            <% end -%>
+          </select> -->
+          <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
+          <button class="btn btn-outline-success rounded-lg" type="submit">Search</button>
+        </form>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Add flat', new_flat_path, class: 'btn btn-outline-primary rounded-lg' %>
+      </li>
+    </ul>
+  </div>
+</div>
